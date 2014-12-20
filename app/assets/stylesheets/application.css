@@ -1,0 +1,35 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require reset
+ *= require style
+ *= require font-awesome/font-awesome.min
+ *= require responsive-layouts
+ *= require colors/blue
+ *= require mainmenu/sticky
+ *= require mainmenu/bootstrap
+ *= require mainmenu/fhmm
+ *= require revolutionslider/settings
+ *= require revolutionslider/slider_main
+ *= require cubeportfolio/cubeportfolio.min
+ *= require tabs/responsive-tabs3
+ *= require tabs/responsive-tabs2
+ *= require tabs/responsive-tabs
+ *= require tabs/tabwidget
+ *= require carousel/flexslider
+ *= require carousel/skin
+ *= require progressbar/ui.progress-bar
+ *= require form/sky-forms
+ *= require accordion/accordion
+ *= require lightbox/jquery.fancybox
+ *= require style_special
+ */

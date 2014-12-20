@@ -1,0 +1,275 @@
+<!-- Content
+======================================= -->
+
+<div class="page_title2">
+  <div class="container">
+
+    <div class="title"><h1>Thiên văn Việt Nam</h1></div>
+
+    <div class="pagenation">&nbsp;<%= link_to "Trang chủ", root_path %>  <i>/</i> <%= link_to "Tin tức", home_astroTg_path %> <i>/</i> Thiên văn thế giới</div>
+
+  </div>
+</div><!-- end page title -->
+
+
+<div class="clearfix"></div>
+
+<div class="container">
+
+<div class="content_left">
+  <% @post.each do |posts| %>
+      <div class="blog_post">
+        <div class="blog_postcontent">
+          <div class="image_frame small"><a href="#"><img src="<%= posts.images.first.attachment_url %>" alt="" /></a></div>
+          <div class="post_info_content_small">
+            <h3><%= link_to posts.title, home_news_post_path(posts.id) %></h3>
+            <ul class="post_meta_links_small">
+              <li class="post_by"><a href="#"><%= posts.author %></a></li>
+
+              <li><a href="#"><%= posts.created_at %></a></li>
+            </ul>
+
+            <div class="clearfix"></div>
+
+            <p>
+              <%= posts.content %>
+            </p>
+          </div>
+        </div>
+      </div><!-- /# end post -->
+
+      <div class="clearfix divider_dashed9"></div>
+  <% end %>
+
+  <!--<div class="pagination">-->
+    <!--<b>Trang 1/18</b>-->
+    <!--<a href="#" class="navlinks">« Trước</a>-->
+    <!--<a href="#" class="navlinks current">1</a>-->
+    <!--<a href="#" class="navlinks">Sau »</a>-->
+  <!--</div>&lt;!&ndash; end pagination &ndash;&gt;-->
+
+</div><!-- end content left side -->
+
+<!-- right sidebar starts -->
+<div class="right_sidebar">
+
+<div class="site-search-area">
+
+  <form method="get" id="site-searchform" action="#">
+    <div>
+      <input class="input-text" name="s" id="s" value="Tìm kiếm từ khóa..." onFocus="if (this.value == 'Enter Search keywords...') {this.value = '';}" onBlur="if (this.value == '') {this.value = 'Enter Search keywords...';}" type="text" />
+      <input id="searchsubmit" value="Search" type="submit" />
+    </div>
+  </form>
+
+</div><!-- end site search -->
+
+<div class="clearfix margin_top4"></div>
+
+<div class="sidebar_widget">
+
+  <div class="sidebar_title"><h3>Tin tức</h3></div>
+  <ul class="arrows_list1">
+    <li><i class="fa fa-angle-right"></i><%= link_to "Nhiệm vụ thăm dò", home_mission_path %></li>
+    <li><i class="fa fa-angle-right"></i><%= link_to "Thiên văn thế giới", home_astroTg_path %></li>
+    <li><i class="fa fa-angle-right"></i><%= link_to "Thiên văn Việt Nam", home_astroVn_path %></li>
+  </ul>
+
+</div><!-- end section -->
+
+<div class="clearfix margin_top4"></div>
+
+<div class="sidebar_widget">
+
+  <div id="tabs">
+
+    <ul class="tabs">
+      <li class="active"><a href="#tab1" class="tab_item">Phổ biến</a></li>
+      <li><a href="#tab2" class="tab_item">Mới nhất</a></li>
+      <li class="last"><a href="#tab3" class="tab_item">Từ khóa</a></li>
+    </ul><!-- /# end tab links -->
+
+    <div class="tab_container">
+      <div id="tab1" class="tab_content">
+
+        <ul class="recent_posts_list">
+          <li>
+            <span><a href="#"><img src="<%= image_path("news/b1.PNG") %>" alt="" width="50" height="50" /></a></span>
+            <a href="#">Tinh vân Helix trong màu sắc mới</a>
+            <i>20 Tháng mười một, 2014</i>
+          </li>
+          <li>
+            <span><a href="#"><img src="<%= image_path("news/b2.PNG") %>" alt="" width="50" height="50" /></a></span>
+            <a href="#">Lỗ đen vũ trụ hình thành như thế nào?</a>
+            <i>14 Tháng mười, 2014</i>
+          </li>
+          <li class="last">
+            <span><a href="#"><img src="<%= image_path("news/b3.PNG") %>" alt="" width="50" height="50" /></a></span>
+            <a href="#">Trong một năm xảy ra bao nhiêu lần nhật thực và nguyệt thực?</a>
+            <i>9 Tháng chín, 2014</i>
+          </li>
+        </ul>
+
+      </div><!-- end popular posts -->
+
+      <div id="tab2" class="tab_content">
+        <ul class="recent_posts_list">
+          <% @news.each do |news_post| %>
+              <li>
+                <span><a href="#"><img src="<%= news_post.images.first.attachment_url %>" alt="" width="50" height="50"/></a></span>
+                <a href="#"><%= news_post.title %></a>
+                <i><%= news_post.created_at %></i>
+              </li>
+          <% end %>
+        </ul>
+
+      </div><!-- end popular articles -->
+
+      <div id="tab3" class="tab_content">
+        <ul class="tags">
+          <li><a href="#">Ánh sáng</a></li>
+          <li><a href="#">Bề mặt</a></li>
+          <li><a href="#">Bí ẩn</a></li>
+          <li><a href="#">Chòm sao</a></li>
+          <li><a href="#">Dải ngân hà</a></li>
+          <li><a href="#">Đài quan sát</a></li>
+          <li><a href="#">Hành tinh</a></li>
+          <li><a href="#">Hệ Mặt Trời</a></li>
+          <li><a href="#">Hiện tượng</a></li>
+          <li><a href="#">Khoa học</a></li>
+          <li><a href="#">Kính thiên văn</a></li>
+          <li><a href="#">Mặt Trăng</a></li>
+          <li><a href="#">Mặt Trời</a></li>
+          <li><a href="#">NASA</a></li>
+          <li><a href="#">Ngôi sao</a></li>
+          <li><a href="#">Nhà thiên văn</a></li>
+          <li><a href="#">Quan sát</a></li>
+          <li><a href="#">Sao chổi</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</div><!-- end section -->
+
+<div class="clearfix margin_top5"></div>
+
+<div class="sidebar_widget">
+
+  <div class="sidebar_title"><h3>Ảnh đẹp trong tuần</h3></div>
+
+  <div class="features_sec15 two">
+
+    <div>
+      <section class="slider nosidearrows">
+        <div class="flexslider carousel">
+
+          <ul class="slides">
+
+            <li>
+
+              <div class="grid-container cbp-l-grid-fullScreen sidebar">
+                <ul>
+                  <li class="cbp-item identity logo"> <a href="#" class="cbp-caption cbp-lightbox" data-title="Mưa sao băng Geminids">
+                    <div class="cbp-caption-defaultWrap"><img src="<%= image_path("home/pheno4.jpg") %>" alt="" /> </div>
+                    <div class="cbp-caption-activeWrap">
+                      <div class="cbp-l-caption-alignLeft">
+                        <div class="cbp-l-caption-body">
+                          <div class="margin_top7"></div>
+                          <div class="cbp-l-caption-title">Mưa sao băng Geminids</div>
+                          <div class="cbp-l-caption-desc">Đây là trận mưa sao băng lớn nhất, nó có thể cho phép người quan sát đếm được trên 100 sao băng mỗi giờ.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  </li>
+                </ul>
+              </div>
+
+            </li><!-- end section -->
+
+            <li>
+
+              <div class="grid-container cbp-l-grid-fullScreen sidebar">
+                <ul>
+                  <li class="cbp-item"> <a href="#" class="cbp-caption cbp-lightbox" data-title="Hiện tượng cực quang">
+                    <div class="cbp-caption-defaultWrap"> <img src="<%= image_path("home/pheno5.jpg") %>" alt="" /></div>
+                    <div class="cbp-caption-activeWrap">
+                      <div class="cbp-l-caption-alignLeft">
+                        <div class="cbp-l-caption-body">
+                          <div class="margin_top7"></div>
+                          <div class="cbp-l-caption-title">Hiện tượng cực quang</div>
+                          <div class="cbp-l-caption-desc">Cuộc gặp gỡ vô cùng thân mật của hai hành tinh sáng nhất trong bầu trời: sao Kim và sao Mộc.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  </li>
+                </ul>
+              </div>
+
+            </li><!-- end section -->
+
+
+            <li>
+
+              <div class="grid-container cbp-l-grid-fullScreen sidebar">
+                <ul>
+                  <li class="cbp-item motion graphic"> <a href="#" class="cbp-caption cbp-lightbox" data-title="Sao chổi Ison">
+                    <div class="cbp-caption-defaultWrap"> <img src="<%= image_path("home/pheno6.jpg") %>" alt="" /> </div>
+                    <div class="cbp-caption-activeWrap">
+                      <div class="cbp-l-caption-alignLeft">
+                        <div class="cbp-l-caption-body">
+                          <div class="margin_top7"></div>
+                          <div class="cbp-l-caption-title">Sao chổi Ison</div>
+                          <div class="cbp-l-caption-desc">Sao chổi thế kỉ Ison chạm trán với mặt trời.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  </li>
+                </ul>
+              </div>
+
+            </li><!-- end section -->
+
+          </ul>
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+
+</div><!-- end section -->
+
+<div class="clearfix margin_top4"></div>
+
+<div class="sidebar_widget">
+
+  <div class="sidebar_title"><h3>Bài viết theo tháng</h3></div>
+
+  <ul class="arrows_list1">
+    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 11</a></li>
+    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 10</a></li>
+    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 9</a></li>
+    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 8</a></li>
+    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 7</a></li>
+    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 6</a></li>
+    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 5</a></li>
+    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 4</a></li>
+    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 3</a></li>
+    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 2</a></li>
+    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 1</a></li>
+  </ul>
+
+</div><!-- end section -->
+
+</div><!-- end right sidebar -->
+
+</div>
+
+
+<div class="clearfix margin_top4"></div>

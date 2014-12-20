@@ -1,0 +1,74 @@
+<!-- Content
+======================================= -->
+
+<div class="page_title2">
+  <div class="container">
+
+    <div class="title"><h1>Đăng nhập</h1></div>
+
+    <div class="pagenation">&nbsp;<%= link_to "Trang chủ", root_path %> <i>/</i> Đăng nhập</div>
+
+  </div>
+</div><!-- end page title -->
+
+
+<div class="clearfix"></div>
+
+<div class="container">
+
+  <div class="content_fullwidth">
+    <div class="login_form sky-form">
+      <%= form_for(resource, as: resource_name ,url: session_path(resource_name)) do |f| %>
+          <header>Đăng nhập</header>
+
+          <fieldset>
+
+            <section>
+              <div class="row">
+                <%= f.label :Email, :class=>"label col col-4" %>
+                <div class="col col-8">
+                  <label class="input">
+                    <i class="icon-append icon-user"></i>
+                    <%= f.email_field :email, autofocus: true %>
+                  </label>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div class="row">
+                <%= f.label :password, :class=>"label col col-4" %>
+                <div class="col col-8">
+                  <label class="input">
+                    <i class="icon-append icon-lock"></i>
+                    <%= f.password_field :password, autocomplete: "off" %>
+                  </label>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div class="row">
+                <div class="col col-4"></div>
+                <div class="col col-8">
+                  <% if devise_mapping.rememberable? -%>
+                      <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+                  <% end -%>
+
+                </div>
+              </div>
+            </section>
+            <%= render "devise/shared/links" %>
+            <div><%= f.submit "Đăng Nhập", :class=>"button"%></div>
+          </fieldset>
+
+      <% end %>
+    </div>
+
+
+  </div>
+
+</div><!-- end content area -->
+
+
+<div class="clearfix margin_top7"></div>

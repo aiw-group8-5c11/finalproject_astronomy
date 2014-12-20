@@ -1,0 +1,72 @@
+<!-- Content
+======================================= -->
+
+<div class="page_title2">
+  <div class="container">
+
+    <div class="title"><h1>Đăng ký</h1></div>
+
+    <div class="pagenation">&nbsp;<%= link_to "Trang chủ", root_path %> <i>/</i> Đăng ký</div>
+
+  </div>
+</div><!-- end page title -->
+
+
+<div class="clearfix"></div>
+
+<div class="container">
+
+  <div class="content_fullwidth">
+
+
+    <div class="reg_form sky-form">
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <header>Đăng ký</header>
+
+        <fieldset>
+          <%= devise_error_messages! %>
+
+          <section>
+            <label class="input">
+              <i class="icon-append icon-envelope-alt"></i>
+              <%= f.email_field :email, autofocus: true %>
+              <!--<input type="email" name="email" placeholder="Địa chỉ email">-->
+              <!--<b class="tooltip tooltip-bottom-right">Nhập địa chỉ email</b>-->
+              <%= f.label :email %>
+            </label>
+          </section>
+
+          <section>
+            <label class="input">
+              <i class="icon-append icon-lock"></i>
+              <!--<input type="password" name="password" placeholder="Mật khẩu" id="password">-->
+              <!--<b class="tooltip tooltip-bottom-right">Nhập mật khẩu</b>-->
+              <%= f.password_field :password, autocomplete: "off" %>
+              <%= f.label :password %>
+            </label>
+          </section>
+
+          <section>
+            <label class="input">
+              <i class="icon-append icon-lock"></i>
+              <!--<input type="password" name="Gõ lại mật khẩu" placeholder="Confirm password">-->
+              <!--<b class="tooltip tooltip-bottom-right">Gõ lại mật khẩu</b>-->
+              <%= f.password_field :password_confirmation, autocomplete: "off" %>
+              <%= f.label :password_confirmation %>
+            </label>
+          </section>
+        </fieldset>
+        <footer>
+          <div><%= f.submit "Đăng Ký" ,:class=>"button" %></div>
+        </footer>
+      <% end %>
+    </div>
+
+  </div>
+
+</div><!-- end content area -->
+
+
+<div class="clearfix margin_top7"></div>
+<%= render "devise/shared/links" %>

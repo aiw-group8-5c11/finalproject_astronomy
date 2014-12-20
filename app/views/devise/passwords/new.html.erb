@@ -1,0 +1,52 @@
+
+<!-- Content
+======================================= -->
+
+<div class="page_title2">
+  <div class="container">
+
+    <div class="title"><h1>Lấy lại mật khẩu</h1></div>
+
+    <div class="pagenation">&nbsp;<%= link_to "Trang chủ", root_path %> <i>/</i> Lấy lại mật khẩu</div>
+
+  </div>
+</div><!-- end page title -->
+
+
+<div class="clearfix"></div>
+
+<div class="container">
+
+  <div class="content_fullwidth">
+
+
+    <div class="reg_form sky-form">
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <header>Lấy lại mật khẩu</header>
+          <%= devise_error_messages! %>
+
+          <section>
+            <label class="input">
+              <i class="icon-append icon-envelope-alt"></i>
+              <%= f.email_field :email, autofocus: true %>
+
+              <%= f.label :email %>
+            </label>
+          </section>
+
+
+
+          <div><%= f.submit "Lấy lại mật khẩu" %></div>
+          <%= render "devise/shared/links" %>
+
+      <% end %>
+
+
+    </div>
+
+  </div>
+
+</div><!-- end content area -->
+
+
+<div class="clearfix margin_top7"></div>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @title %></title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:600&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+  <!-- Include meta tag to ensure proper rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <!-- ######### CSS STYLES ######### -->
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <!-- responsive devices styles -->
+
+
+</head>
+
+<body>
+
+<div class="site_wrapper">
+
+<header id="header">
+
+  <!-- Top header bar -->
+  <div id="topHeader">
+
+    <div class="wrapper">
+
+      <div class="top_nav">
+        <div class="container">
+
+          <div class="left">
+
+            <ul>
+              <li><a href="mailto:group8-5c11@gmail.com"><i class="fa fa-envelope"></i> group8-5c11@gmail.com</a></li>
+              <li><i class="fa fa-phone-square"></i> +84 123 456 789</li>
+            </ul>
+
+          </div>
+          <!-- end left links -->
+
+          <div class="right">
+
+            <ul>
+              <li class="link"><%= render 'layouts/user_widget' %></li>
+
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="https://github.com/aiw-group8-5c11"><i class="fa fa-github-alt"></i></a></li>
+              <li><a href="#"><i class="fa fa-rss"></i></a></li>
+            </ul>
+
+          </div>
+          <!-- end right social links -->
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- end top navigation -->
+
+
+  <div id="trueHeader">
+
+    <div class="wrapper">
+
+      <div class="container">
+
+        <!-- Logo -->
+        <div class="logo"><%= link_to "Trang chủ", home_index_path, :id=> "logo" %></div>
+
+        <!-- Menu -->
+        <div class="menu_main">
+
+          <nav class="navbar navbar-default fhmm" role="navigation">
+            <div class="navbar-header">
+              <button type="button" data-toggle="collapse" data-target="#defaultmenu" class="navbar-toggle">Menu <i class="fa fa-bars tbars"></i></button>
+            </div><!-- end navbar-header -->
+
+            <div id="defaultmenu" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="page_cur"><%= link_to "Trang chủ", root_path %></li>
+                <li class="page_cur"><%= link_to "Giới thiệu", home_about_path %></li>
+                <li class="page_cur"><%= link_to "Tin tức", home_news_path %></li>
+                <!-- Mega Menu -->
+                <li class="dropdown fhmm-fw"><a href="knowledge.html" data-toggle="dropdown" class="dropdown-toggle">Kiến thức</a>
+                  <ul class="dropdown-menu fullwidth">
+                    <li class="fhmm-content">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <br>
+                          <img src="<%= image_path("menu-1.jpg") %>" alt="" />
+                        </div><!-- end col-4 -->
+
+                        <div class="col-sm-2">
+                          <h3 class="title">Hệ mặt trời</h3>
+                          <ul>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Mặt trời</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Hành tinh</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Các vệ tinh tự nhiên</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Sao chổi</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Tiểu hành tinh</a></li>
+                          </ul>
+                        </div>
+
+                        <div class="col-sm-2">
+                          <h3 class="title">Thiên hà</h3>
+                          <ul>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Dải ngân hà</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Tinh vân & Cụm sao</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Ngoại thiên hà</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Sao, hệ sao và ngoại hành tinh</a></li>
+                          </ul>
+                        </div>
+
+                        <div class="col-sm-2">
+                          <h3 class="title">Câu hỏi</h3>
+                          <ul>
+                            <li><i class="fa fa-angle-right"></i><%= link_to "Trái Đất & Hệ mặt trời", home_question_path %></li>
+                            <li><i class="fa fa-angle-right"></i><%= link_to "Thiên cầu & Các chòm sao", home_question_path %></li>
+                            <li><i class="fa fa-angle-right"></i><%= link_to " Sao & Thiên hà", home_question_path %></li>
+                            <li><i class="fa fa-angle-right"></i><%= link_to "Vũ trụ, không gian & thời gian", home_question_path %></li>
+                          </ul>
+                        </div>
+
+                      </div><!-- end row -->
+
+                    </li><!-- fhmm-content -->
+                  </ul><!-- dropdown-menu -->
+                </li><!-- mega menu -->
+                <!-- Mega Menu -->
+                <li class="dropdown fhmm-fw"><a href="discovery.html" data-toggle="dropdown" class="dropdown-toggle">Khám phá</a>
+                  <ul class="dropdown-menu fullwidth">
+                    <li class="fhmm-content">
+                      <div class="row">
+                        <div class="col-sm-4">
+                          <br>
+                          <img src="<%= image_path("menu-2.jpg") %>" alt="" />
+                        </div><!-- end col-4 -->
+
+                        <div class="col-sm-2">
+                          <h3 class="title">Quan sát thiên văn</h3>
+                          <ul>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Tiêu điểm quan sát</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Dụng cụ quan sát</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Kĩ năng quan sát</a></li>
+                          </ul>
+                        </div>
+
+                        <div class="col-sm-2">
+                          <h3 class="title">Vũ trụ học & Vật lý</h3>
+                          <ul>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Vật lý thiên văn & Hạt nhân</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Vật chất tối & Năng lượng tối</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Sự hình thành vũ trụ</a></li>
+                          </ul>
+                        </div>
+
+                        <div class="col-sm-2">
+                          <h3 class="title">Công nghệ khám phá</h3>
+                          <ul>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Kính thiên văn</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Tàu thăm dò</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Tên lửa vũ trụ</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i> Vệ tinh nhân tạo</a></li>
+                          </ul>
+                        </div>
+
+                      </div><!-- end row -->
+
+                    </li><!-- fhmm-content -->
+                  </ul><!-- dropdown-menu -->
+                </li><!-- mega menu -->
+                <li class="page_cur"><%= link_to "Liên hệ", home_contact_path %>
+
+              </ul><!-- end nav navbar-nav -->
+
+            </div><!-- end #navbar-collapse-1 -->
+
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+<div class="clearfix"></div>
+
+<%= yield %>
+
+<div class="footer1">
+  <div class="container">
+
+    <div class="one_fourth">
+
+      <ul class="faddress">
+        <li><img src="<%= image_path("footer-logo.png") %>" alt="Side Logo"/></li>
+        <li><i class="fa fa-map-marker fa-lg"></i>&nbsp; Km 9, đường Nguyễn Trãi,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quận
+          Thanh Xuân, Hà Nội, Việt Nam.
+        </li>
+        <li><i class="fa fa-phone"></i>&nbsp; (84-4)38544338</li>
+        <li><i class="fa fa-print"></i>&nbsp; (84-4)38544550</li>
+        <li><a href="mailto:info@yourdomain.com"><i class="fa fa-envelope"></i> hanu@hanu.vn</a></li>
+      </ul>
+
+    </div>
+    <!-- end address -->
+
+    <div class="one_fourth">
+      <div class="qlinks">
+
+        <h3 class="lmb nocaps">Liên kết</h3>
+
+        <ul>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Phim ảnh thiên văn</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Tiêu điểm quan sát</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Kinh thiên văn</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Công nghệ vũ trụ</a></li>
+          <li><a href="#"><i class="fa fa-angle-right"></i> Tin thiên văn thế giới</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <!-- end links -->
+
+    <div class="one_fourth">
+      <div class="frposts">
+
+        <h3 class="lmb nocaps">Bài viết mới</h3>
+
+        <ul>
+          <li><a href="#"><i class="fa fa-caret-right"></i> Lỗ đen vũ trụ</a></li>
+          <li><a href="#"><i class="fa fa-caret-right"></i> Quan sát mưa sao băng</a></li>
+          <li><a href="#"><i class="fa fa-caret-right"></i> Phát hiện vật thể lạ</a></li>
+          <li><a href="#"><i class="fa fa-caret-right"></i> Sao chổi tấn công Trái Đất</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <!-- end links -->
+
+    <div class="one_fourth last">
+      <div class="ftags">
+
+        <h3 class="nocaps">Thẻ Tags</h3>
+
+        <ul>
+          <li><a href="#">Thiên văn</a></li>
+          <li><a href="#">Thám hiểm</a></li>
+          <li><a href="#">Hành tinh</a></li>
+          <li><a href="#">Vũ trụ</a></li>
+          <li><a href="#">Nhà du hành</a></li>
+          <li><a href="#">Khám phá</a></li>
+          <li><a href="#">Tinh vân</a></li>
+          <li><a href="#">Dải ngân hà</a></li>
+          <li><a href="#">Hệ mặt trời</a></li>
+        </ul>
+
+      </div>
+    </div>
+    <!-- end tags -->
+
+  </div>
+</div>
+<!-- end footer -->
+
+<div class="clearfix"></div>
+
+<div class="copyright_info">
+  <div class="container">
+
+    <div class="one_half">
+
+      Copyright © 2014 Group 8 - 5C11. All rights reserved.<br> <a href="#">Điều Khoản</a> |
+      <a href="#">Chính Sách Bảo Mật</a>
+
+    </div>
+
+    <div class="one_half last">
+
+      <ul class="footer_social_links">
+        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+        <li><a href="https://github.com/aiw-group8-5c11"><i class="fa fa-github-alt"></i></a></li>
+        <li><a href="#"><i class="fa fa-rss"></i></a></li>
+      </ul>
+
+    </div>
+
+  </div>
+</div>
+<!-- end copyright info -->
+
+
+<a href="#" class="scrollup">Scroll</a><!-- end scroll to top of the page-->
+
+
+</div>
+
+<!-- jquery jcarousel -->
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery('#mycarouselthree').jcarousel();
+    });
+</script>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-374977-27']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<!-- dropdown menu -->
+<script type="text/javascript">
+    // Menu drop down effect
+    $('.dropdown-toggle').dropdownHover().dropdown();
+    $(document).on('click', '.fhmm .dropdown-menu', function(e) {
+        e.stopPropagation()
+    })
+</script>
+
+<script type="text/javascript">
+    $(function(){
+        $('.myGallery').galleryView();
+    });
+</script>
+</body>
+</html>

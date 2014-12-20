@@ -1,0 +1,41 @@
+#site-searchform #searchsubmit{
+    background-image: url("../assets/site-search-icon.png");
+}
+.tabs li a.tab_item{
+    padding-left: 0;
+    height: 43px;
+}
+.cbp-l-grid-fullScreen {
+    visibility: visible;
+}
+ul#tabs_items{
+    width: 22%;
+    font:14px 'Open Sans', Arial, Helvetica, sans-serif;
+}
+ul#tabs_items li{
+    clear: left;
+    width:100%;
+    border-right: none;
+    border-left: 1px solid #eee;
+}
+ul#tabs_items li a{
+    background: #fff;
+    text-align: left;
+    text-transform: none;
+    font-weight: normal;
+    font-size: 14px;
+}
+ul#tabs_items li.active, ul#tabs_items li.active a, html ul#tabs_items li a:hover{
+    border-top: none;
+    background: #3c6b97;
+    color: #fff;
+}
+/*slide mission*/
+.item img,.item{
+    width:791px;
+    height: 590px;
+}
+
+.sr-only{
+    display: none;
+}

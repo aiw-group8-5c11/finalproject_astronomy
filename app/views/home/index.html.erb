@@ -1,0 +1,288 @@
+<!-- Slider  -->
+<div class="container_full">
+  <div class="tp-banner-container">
+    <div class="tp-banner">
+      <ul>
+        <!-- SLIDE 1 -->
+        <li data-transition="curtain-1" data-slotamount="7" data-masterspeed="1000">
+          <img src="<%= image_path("sliders/1.jpg") %>" alt="" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+        </li>
+
+        <!-- SLIDE 2 -->
+        <li data-transition="boxslide" data-slotamount="7" data-masterspeed="1000">
+          <img src="<%= image_path("sliders/2.jpg") %>" alt="" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+        </li>
+
+        <!-- SLIDE 3 -->
+        <li data-transition="curtain-2" data-slotamount="7" data-masterspeed="1000">
+          <img src="<%= image_path("sliders/3.jpg") %>" alt="" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+        </li>
+
+        <!-- SLIDE 4 -->
+        <li data-transition="boxslide" data-slotamount="7" data-masterspeed="1000">
+          <img src="<%= image_path("sliders/4.jpg") %>" alt="" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+        </li>
+
+        <!-- SLIDE 5 -->
+        <li data-transition="curtain-1" data-slotamount="7" data-masterspeed="1000">
+          <img src="<%= image_path("sliders/5.jpg") %>" alt="" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+        </li>
+
+        <!-- SLIDE 6 -->
+        <li data-transition="boxslide" data-slotamount="7" data-masterspeed="1000">
+          <img src="<%= image_path("sliders/6.jpg") %>" alt="" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat">
+
+        </li>
+      </ul>
+    </div>
+  </div>
+</div> <!-- end slider -->
+
+
+<div class="clearfix"></div>
+
+<div class="features_sec1">
+  <div class="container">
+    <h2 class="section_title_drakgray">Hệ Mặt Trời</h2>
+
+    <% @planet.each do |item| %>
+        <div class="one_fourth">
+          <img src="<%= item.images.first.attachment_url %>" alt="Side Logo"/>
+
+          <div class="clearfix"></div>
+
+          <a href="#"><h3 class="nocaps"><%= item.element.name %></h3></a>
+
+          <p><%= item.description %></p>
+          <br/>
+
+        </div>
+    <% end %>
+
+  </div>
+</div><!-- end features section1 -->
+
+<div class="clearfix"></div>
+
+<div class="features_sec29">
+  <div class="container">
+
+    <h2 class="section_title_drakgray"><strong>Khám phá</strong></h2>
+
+    <div class="one_third">
+      <div class="box">
+        <img src="<%= image_path("home/ds1.jpg") %>" alt="Side Logo"/>
+
+        <h3>Quan sát thiên văn</h3>
+
+        <p>Chủ đề về quan sát các vì sao, hành tinh, thiên thể... </p>
+        <br/>
+        <a href="#" class="readmore_but11"><i class="fa fa-star"></i> Xem thêm</a>
+
+      </div>
+    </div>
+    <!-- end section -->
+
+    <div class="one_third">
+      <div class="box">
+        <img src="<%= image_path("home/ds2.jpg") %>" alt="Side Logo"/>
+
+
+        <h3>Vũ trụ học & Vật lý thiên văn</h3>
+
+        <p>Thảo luận về các định luật tính toán về vật lý thiên văn</p>
+        <br/>
+        <a href="#" class="readmore_but11"><i class="fa fa-cloud"></i> Xem thêm</a>
+
+      </div>
+    </div>
+    <!-- end section -->
+
+    <div class="one_third last">
+      <div class="box">
+        <img src="<%= image_path("home/ds3.jpg") %>" alt=""/>
+
+
+        <h3>Công nghệ khám phá vũ trụ</h3>
+
+        <p>Công nghệ mới nhất về tên lửa, tàu vũ trụ, vệ tinh...</p>
+        <br/>
+        <a href="#" class="readmore_but11"><i class="fa fa-rocket"></i> Xem thêm</a>
+
+      </div>
+    </div>
+    <!-- end section -->
+
+  </div>
+</div><!-- end features section29 -->
+
+<div class="clearfix"></div>
+
+<div class="features_sec9">
+  <div class="container">
+
+    <h2 class="section_title_white"><strong>Thư viện</strong></h2>
+
+    <div class="one_fourth">
+      <div class="box">
+        <a href="#">
+          <div class="image">
+            <div>
+              <i class="fa fa-camera"></i>
+              <h4>Hình ảnh</h4>
+            </div>
+
+          </div>
+          <div class="text">
+            <div><h4>Hình ảnh</h4> Tổng hợp những hình ảnh thiên văn ấn tượng, mới nhất...</div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+    <!-- end section -->
+
+    <div class="one_fourth">
+      <div class="box">
+        <a href="#">
+          <div class="image">
+
+            <div>
+              <i class="fa fa-video-camera"></i>
+              <h4>Video Clip</h4>
+            </div>
+
+          </div>
+          <div class="text">
+            <div><h4>Video Clip</h4> Tổng hợp những clip thiên văn rõ nét, sống động...</div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+    <!-- end section -->
+
+    <div class="one_fourth">
+      <div class="box">
+        <a href="#">
+          <div class="image">
+
+            <div>
+              <i class="fa fa-book"></i>
+              <h4>Sách báo</h4>
+            </div>
+
+          </div>
+          <div class="text">
+            <div><h4>Sách báo</h4> Tổng hợp những link download sách báo thiên văn hay nhất...</div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+    <!-- end section -->
+
+    <div class="one_fourth last">
+      <div class="box">
+        <a href="#">
+          <div class="image">
+            <div>
+              <i class="fa fa-smile-o"></i>
+              <h4>Fun facts</h4>
+            </div>
+
+          </div>
+          <div class="text">
+            <div><h4>Fun facts</h4> Tổng hợp những câu chuyện thiên văn thú vị, hài hước...</div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+    <!-- end section -->
+
+  </div>
+</div><!-- end features section9 -->
+
+<div class="clearfix"></div>
+
+<div class="features_sec27">
+  <div class="container">
+    <span style="text-align: center;">
+      <h2 class="section_title_drakgray"><%= link_to "Tin mới", home_news_path %></h2></span>
+    <% @news.each do |news_post| %>
+        <div class="one_fourth">
+
+          <ul class="blogs2">
+            <li><a href="#"><img src="<%= news_post.images.first.attachment_url %>" alt="ảnh bài viết" /></a></li>
+            <li><h4 class="nocaps"><%=link_to news_post.title, home_news_post_path(news_post.id), :class=>"two" %></h4></li>
+            <li><i class="fa fa-clock-o"></i><%= news_post.created_at %> &nbsp;&nbsp;<i class="fa fa-user"></i>
+             Admin
+            </li>
+          </ul>
+
+        </div>
+    <% end %>
+  </div>
+</div><!-- end features section27 -->
+
+<div class="clearfix"></div>
+
+<div class="features_sec24">
+  <div class="container">
+
+    <div class="latestnews">
+
+      <h2 class="section_title_drakgray left">Hoạt động</h2>
+
+      <ul class="news">
+        <li class="left"><a href="#"><img src="<%= image_path("home/act1.jpg") %>" alt=""/></a></li>
+        <li><h5><a href="#">Hội trại thiên văn</a></h5> <i class="fa fa-clock-o"></i> Nov 6,
+          2014 &nbsp;&nbsp;<i class="fa fa-comment"></i> 13
+        </li>
+      </ul>
+
+      <ul class="news">
+        <li class="left"><a href="#"><img src="<%= image_path("home/act2.jpg") %>" alt=""/></a></li>
+        <li><h5><a href="#">Cuộc thi tên lửa nước</a></h5> <i class="fa fa-clock-o"></i> Nov 12,
+          2014 &nbsp;&nbsp;<i class="fa fa-comment"></i> 13
+        </li>
+      </ul>
+
+      <ul class="news">
+        <li class="left"><a href="#"><img src="<%= image_path("home/act3.jpg") %>" alt=""/></a></li>
+        <li><h5><a href="#">Lớp kính thiên văn</a></h5> <i class="fa fa-clock-o"></i> Oct 30,
+          2014 &nbsp;&nbsp;<i class="fa fa-comment"></i> 13
+        </li>
+      </ul>
+
+      <div class="clearfix margin_top3"></div>
+
+      <a href="#" class="readmore_but8">Xem thêm <i class="fa fa-long-arrow-right"></i></a>
+
+    </div>
+    <!-- end news -->
+
+    <div class="latestblogs">
+
+      <h2 class="section_title_drakgray left">Nhiệm vụ du hành</h2>
+
+      <ul class="hblogs">
+        <li class="image"><img src="<%= image_path("home/ms1.jpg") %>" alt=""/></li>
+        <li class="date"><strong>20</strong> Nov</li>
+        <li class="title"><h2 class="nocaps"><a href="#" class="two">Nhiệm vụ tiếp theo của NASA trên sao Hỏa</a></h2>
+          by <a href="#" class="three">NASA</a> in <a href="#" class="three">NASA Science</a></li>
+        <li class="text">
+          <p>Sau 17 năm tiến hành quan sát và theo dõi, NASA cho biết sẽ tiếp tục đưa các phương tiện thăm dò lên sao
+            Hỏa nhằm đạt được những mục tiêu cuối cùng.</p></li>
+        <li><br/><a href="#" class="readmore_but8">Xem thêm <i class="fa fa-long-arrow-right"></i></a></li>
+      </ul>
+
+    </div>
+
+  </div>
+</div><!-- end features section24 -->
+
+<div class="clearfix"></div>
+
+
