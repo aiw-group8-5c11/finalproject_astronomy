@@ -15,17 +15,7 @@ ActiveAdmin.register News do
   filter :title
   filter :author
   filter :category_id
-  show do |ad|
-    attributes_table do
-      row :id
-      row :university_cate_id
-      row :name
-      row :full_content
-      row :created_at
-      row :updated_at
-    end
-    active_admin_comments
-  end
+
 
   form :html => {:multipart => true} do |f|
     f.inputs do

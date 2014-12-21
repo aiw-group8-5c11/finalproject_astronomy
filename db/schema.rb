@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20141211071233) do
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "categories", force: true do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -69,10 +69,8 @@ ActiveRecord::Schema.define(version: 20141211071233) do
     t.integer  "system_id"
   end
 
-  add_index "elements", ["name"], name: "name", unique: true, using: :btree
-
   create_table "images", force: true do |t|
-    t.string   "image_path"
+    t.text     "image_path"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "attachment"
@@ -93,7 +91,7 @@ ActiveRecord::Schema.define(version: 20141211071233) do
     t.string   "name"
     t.text     "description"
     t.integer  "status_id"
-    t.datetime "launch_date"
+    t.datetime "lauch_date"
     t.datetime "active_date"
     t.datetime "finished_date"
     t.datetime "created_at"

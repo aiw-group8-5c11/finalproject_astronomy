@@ -4,9 +4,9 @@
 <div class="page_title2">
   <div class="container">
 
-    <div class="title"><h1>Thiên văn Việt Nam</h1></div>
+    <div class="title"><h1>Bài viết</h1></div>
 
-    <div class="pagenation">&nbsp;<%= link_to "Trang chủ", root_path %>  <i>/</i> <%= link_to "Tin tức", home_astroTg_path %> <i>/</i> Thiên văn thế giới</div>
+    <div class="pagenation">&nbsp;<%= link_to "Trang chủ", root_path %>  <i>/</i> <%= link_to "Tin tức", home_news_path %> <i>/</i></div>
 
   </div>
 </div><!-- end page title -->
@@ -17,36 +17,117 @@
 <div class="container">
 
 <div class="content_left">
-  <% @post.each do |posts| %>
-      <div class="blog_post">
-        <div class="blog_postcontent">
-          <div class="image_frame small"><a href="#"><img src="<%= posts.images.first.attachment_url %>" alt="" /></a></div>
-          <div class="post_info_content_small">
-            <h3><%= link_to posts.title, home_news_post_path(posts.id) %></h3>
-            <ul class="post_meta_links_small">
-              <li class="post_by"><a href="#"><%= posts.author %></a></li>
 
-              <li><a href="#"><%= posts.created_at %></a></li>
-            </ul>
+  <div class="blog_post">
+    <div class="blog_postcontent">
+      <!--<a href="#" class="date"><strong>18</strong><i>Tháng 11</i></a>-->
+      <h3><a href="#"><%= @details[0].name %></a></h3>
 
-            <div class="clearfix"></div>
 
-            <p>
-              <%= posts.content %>
-            </p>
-          </div>
-        </div>
-      </div><!-- /# end post -->
+      <div class="post_info_content">
+        <%= @details[0].description.html_safe %>
+        <br>
+      </div>
+    </div>
+  </div><!-- /# end post -->
 
-      <div class="clearfix divider_dashed9"></div>
-  <% end %>
+  <div class="clearfix divider_dashed9"></div>
 
-  <!--<div class="pagination">-->
-    <!--<b>Trang 1/18</b>-->
-    <!--<a href="#" class="navlinks">« Trước</a>-->
-    <!--<a href="#" class="navlinks current">1</a>-->
-    <!--<a href="#" class="navlinks">Sau »</a>-->
-  <!--</div>&lt;!&ndash; end pagination &ndash;&gt;-->
+
+  <div class="sharepost">
+    <h4>Chia sẻ bài viết</h4>
+    <ul>
+      <li><a href="#">&nbsp;<i class="fa fa-facebook fa-lg"></i>&nbsp;</a></li>
+      <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
+      <li><a href="#"><i class="fa fa-google-plus fa-lg"></i></a></li>
+      <li><a href="#"><i class="fa fa-tumblr fa-lg"></i></a></li>
+      <li><a href="#"><i class="fa fa-pinterest fa-lg"></i></a></li>
+      <li><a href="#"><i class="fa fa-linkedin fa-lg"></i></a></li>
+    </ul>
+
+  </div><!-- end share post links -->
+
+
+  <div class="clearfix margin_top5"></div>
+
+  <div class="one_half">
+    <div class="popular-posts-area">
+      <h4>Bài viết mới nhất</h4>
+      <ul class="recent_posts_list">
+        <% @news.each do |news_post| %>
+            <li>
+              <span><a href="#"><img src="<%= news_post.images.first.attachment_url %>" alt="" width="50" height="50"/></a></span>
+              <%=link_to news_post.title, home_news_post_path(news_post.id) %>
+              <i><%= news_post.created_at %></i>
+            </li>
+        <% end %>
+      </ul>
+
+    </div>
+  </div><!-- end recent posts -->
+
+
+  <div class="one_half last">
+    <div class="popular-posts-area">
+      <h4>Bài đọc nhiều nhất</h4>
+      <ul class="recent_posts_list">
+        <li>
+          <span><a href="#"><img src="<%= image_path("blog/4.JPG") %>" alt="" width="50" height="50"/></a></span>
+          <a href="#">20 ngôi sao sáng nhất bầu trời đêm</a>
+          <i>15 Tháng 9, 2014</i>
+        </li>
+
+        <li>
+          <span><a href="#"><img src="<%= image_path("blog/5.JPG") %>" alt="" width="50" height="50"/></a></span>
+          <a href="#">Hình thành và tiến hóa của sự sống trên Trái Đất</a>
+          <i>14 Tháng 11, 2014</i>
+        </li>
+
+        <li>
+          <span><a href="#"><img src="<%= image_path("blog/6.JPG") %>" alt="" width="50" height="50"/></a></span>
+          <a href="#">Tự làm kính thiên văn phản xạ</a>
+          <i>10 Tháng 10, 2014</i>
+        </li>
+      </ul>
+
+    </div>
+  </div><!-- end popular posts -->
+
+  <div class="clearfix divider_dashed9"></div>
+
+  <div class="comment_form">
+
+    <h4>Ý kiến của bạn</h4>
+
+    <form action="#" method="post">
+      <% if user_signed_in? %>
+          <a href="#"></a><i><%= current_user.email %></i></a>
+          <textarea name="comment" class="comment_textarea_bg" rows="5"></textarea>
+          <div class="clearfix"></div>
+          <input name="send" type="submit" value="Gửi đi" class="comment_submit"/>
+          <p></p>
+          <p class="comment_checkbox"><input type="checkbox" name="check" /> Gửi thông báo cho tôi qua email.</p>
+      <% else %>
+          <p>Bạn có muốn đăng nhập? <%= link_to 'Login', new_user_session_path %></p>
+          <input type="text" name="yourname" id="name" class="comment_input_bg" />
+          <label for="name">Tên*</label>
+
+          <input type="text" name="email" id="mail" class="comment_input_bg" />
+          <label for="mail">Email*</label>
+
+          <textarea name="comment" class="comment_textarea_bg" rows="5" ></textarea>
+          <div class="clearfix"></div>
+          <input name="send" type="submit" value="Gửi đi" class="comment_submit"/>
+          <p></p>
+          <p class="comment_checkbox"><input type="checkbox" name="check" /> Gửi thông báo cho tôi qua email.</p>
+      <% end %>
+
+
+    </form>
+
+  </div><!-- end comment form -->
+
+  <div class="clearfix mar_top2"></div>
 
 </div><!-- end content left side -->
 
@@ -117,7 +198,7 @@
           <% @news.each do |news_post| %>
               <li>
                 <span><a href="#"><img src="<%= news_post.images.first.attachment_url %>" alt="" width="50" height="50"/></a></span>
-                <%=link_to news_post.title, home_news_post_path(news_post.id) %>
+                <%=link_to news_post.title, home_news_post_path(news_post.id)%>
                 <i><%= news_post.created_at %></i>
               </li>
           <% end %>
@@ -246,10 +327,9 @@
 </div><!-- end section -->
 
 <div class="clearfix margin_top4"></div>
-
 </div><!-- end right sidebar -->
 
 </div>
 
 
-<div class="clearfix margin_top4"></div>
+<div class="clearfix margin_top7"></div>

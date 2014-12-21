@@ -117,7 +117,7 @@
           <% @news.each do |news_post| %>
               <li>
                 <span><a href="#"><img src="<%= news_post.images.first.attachment_url %>" alt="" width="50" height="50"/></a></span>
-                <a href="#"><%= news_post.title %></a>
+                <%=link_to news_post.title, home_news_post_path(news_post.id) %>
                 <i><%= news_post.created_at %></i>
               </li>
           <% end %>
@@ -247,25 +247,6 @@
 
 <div class="clearfix margin_top4"></div>
 
-<div class="sidebar_widget">
-
-  <div class="sidebar_title"><h3>Bài viết theo tháng</h3></div>
-
-  <ul class="arrows_list1">
-    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 11</a></li>
-    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 10</a></li>
-    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 9</a></li>
-    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 8</a></li>
-    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 7</a></li>
-    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 6</a></li>
-    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 5</a></li>
-    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 4</a></li>
-    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 3</a></li>
-    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 2</a></li>
-    <li><a href="#"><i class="fa fa-angle-right"></i> Tháng 1</a></li>
-  </ul>
-
-</div><!-- end section -->
 
 </div><!-- end right sidebar -->
 

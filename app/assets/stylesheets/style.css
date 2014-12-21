@@ -4624,7 +4624,7 @@ ul.list_empty {
 	float: left;
 	margin-top: 3px;
 	text-transform: none;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 	font-weight: 300;
 	font-size: 30px;
 }
@@ -4633,7 +4633,7 @@ ul.list_empty {
 }
 .post_info_content {
 	padding: 0px;
-	margin: 10px 0 0 10%;
+	margin: 10px 0 0 5%;
 	width: 90%;
 	float: left;
 }
@@ -4657,6 +4657,7 @@ ul.post_meta_links {
 .post_meta_links li.post_categoty {
 	padding: 0px 0px 0px 22px;
 	background: url(blog/icon-category.png) no-repeat 2px 6px;
+    white-space: nowrap;
 }
 .post_meta_links li.post_comments {
 	padding: 0px 0px 0px 22px;

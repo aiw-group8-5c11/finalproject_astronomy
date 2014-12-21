@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'home/mission'
   get 'home/news'
   get 'home/news_post/:id', to:"home#news_post", as:"home_news_post"
+  get 'home/details/:id', to:"home#details", as:"home_details_post"
   get 'home/astroTg'
   get 'home/astroVn'
   get 'home/question'

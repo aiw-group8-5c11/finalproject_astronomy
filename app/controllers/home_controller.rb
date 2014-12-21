@@ -2,9 +2,8 @@ class HomeController < ApplicationController
 
   def index
     @title="Trang Chủ"
-    @planet=Detail.all
+    @planet=Detail.limit(8)
     @news=News.order("created_at DESC").limit(4)
-    # @element=Element.find (params [:@planet.element_id])
   end
   def contact
     @title="Liên Hệ"
@@ -15,7 +14,12 @@ class HomeController < ApplicationController
   def news_post
     @post=News.find(params[:id])
     @title=@post.title
-    @news=News.order("created_at DESC").limit(2)
+    @news=News.order("created_at DESC").limit(3)
+  end
+  def details
+    @details = Detail.where(:element_id=>params[:id]).order("id DESC").limit(1)
+    @news=News.order("created_at DESC").limit(3)
+    @title=@details[0].name
   end
   def mission
     @title="Nhiệm vụ thăm dò́"
@@ -24,12 +28,12 @@ class HomeController < ApplicationController
   def astroTg
     @title="Thiên văn thế giớí"
     @post=News.where(:category=>"2")
-    @news=News.order("created_at DESC").limit(2)
+    @news=News.order("created_at DESC").limit(3)
   end
   def astroVn
     @title="Thiên văn Việt Naḿ"
     @post=News.where(:category=>"1")
-    @news=News.order("created_at DESC").limit(2)
+    @news=News.order("created_at DESC").limit(3)
   end
   def news
     @title="Tin tức"

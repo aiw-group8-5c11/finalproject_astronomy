@@ -13,6 +13,19 @@ ActiveAdmin.register Detail do
   filter :name
   filter :id
   filter :element_id
+
+  form :html => {:multipart => true} do |f|
+    f.inputs do
+      f.input :name
+
+      f.input :element_id, :as => :select, :collection => Element.all.collect {|element| [element.name, element.id] }
+
+      f.input :description, as: :wysihtml5
+    end
+
+    f.actions
+
+  end
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #

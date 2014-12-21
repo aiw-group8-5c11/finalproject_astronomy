@@ -47,11 +47,11 @@
 
     <% @planet.each do |item| %>
         <div class="one_fourth">
-          <img src="<%= item.images.first.attachment_url %>" alt="Side Logo"/>
+          <img src="<%= item.images[0].attachment_url %>" alt="Side Logo"/>
 
           <div class="clearfix"></div>
 
-          <a href="#"><h3 class="nocaps"><%= item.element.name %></h3></a>
+          <h3 class="nocaps"><%= link_to item.element.name, home_details_post_path(item.element_id) %></h3>
 
           <p><%= item.description %></p>
           <br/>
