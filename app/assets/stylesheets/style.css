@@ -1565,6 +1565,7 @@ ul.fun_facts {
 .features_sec24 ul.hblogs li.image img {
 	float: left;
 	width: 100%;
+    height: 300px;
 }
 .features_sec24 ul.hblogs li.date {
 	float: left;

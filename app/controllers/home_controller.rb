@@ -4,6 +4,7 @@ class HomeController < ApplicationController
     @title="Trang Chủ"
     @planet=Detail.limit(8)
     @news=News.order("created_at DESC").limit(4)
+    @mission=Mission.order("created_at DESC").limit(1)
   end
   def contact
     @title="Liên Hệ"

@@ -64,60 +64,6 @@
 
 <div class="clearfix"></div>
 
-<div class="features_sec29">
-  <div class="container">
-
-    <h2 class="section_title_drakgray"><strong>Khám phá</strong></h2>
-
-    <div class="one_third">
-      <div class="box">
-        <img src="<%= image_path("home/ds1.jpg") %>" alt="Side Logo"/>
-
-        <h3>Quan sát thiên văn</h3>
-
-        <p>Chủ đề về quan sát các vì sao, hành tinh, thiên thể... </p>
-        <br/>
-        <a href="#" class="readmore_but11"><i class="fa fa-star"></i> Xem thêm</a>
-
-      </div>
-    </div>
-    <!-- end section -->
-
-    <div class="one_third">
-      <div class="box">
-        <img src="<%= image_path("home/ds2.jpg") %>" alt="Side Logo"/>
-
-
-        <h3>Vũ trụ học & Vật lý thiên văn</h3>
-
-        <p>Thảo luận về các định luật tính toán về vật lý thiên văn</p>
-        <br/>
-        <a href="#" class="readmore_but11"><i class="fa fa-cloud"></i> Xem thêm</a>
-
-      </div>
-    </div>
-    <!-- end section -->
-
-    <div class="one_third last">
-      <div class="box">
-        <img src="<%= image_path("home/ds3.jpg") %>" alt=""/>
-
-
-        <h3>Công nghệ khám phá vũ trụ</h3>
-
-        <p>Công nghệ mới nhất về tên lửa, tàu vũ trụ, vệ tinh...</p>
-        <br/>
-        <a href="#" class="readmore_but11"><i class="fa fa-rocket"></i> Xem thêm</a>
-
-      </div>
-    </div>
-    <!-- end section -->
-
-  </div>
-</div><!-- end features section29 -->
-
-<div class="clearfix"></div>
-
 <div class="features_sec9">
   <div class="container">
 
@@ -268,14 +214,13 @@
       <h2 class="section_title_drakgray left">Nhiệm vụ du hành</h2>
 
       <ul class="hblogs">
-        <li class="image"><img src="<%= image_path("home/ms1.jpg") %>" alt=""/></li>
-        <li class="date"><strong>20</strong> Nov</li>
-        <li class="title"><h2 class="nocaps"><a href="#" class="two">Nhiệm vụ tiếp theo của NASA trên sao Hỏa</a></h2>
+        <li class="image"><img src="<%= @mission.first.images[0].attachment_url %>" alt=""/></li>
+
+        <li class="title"><h2 class="nocaps"><%= link_to "Nhiệm vụ tiếp theo của NASA trên "+ @mission.first.element.name, home_mission_path, :class => "two" %></h2>
           by <a href="#" class="three">NASA</a> in <a href="#" class="three">NASA Science</a></li>
         <li class="text">
-          <p>Sau 17 năm tiến hành quan sát và theo dõi, NASA cho biết sẽ tiếp tục đưa các phương tiện thăm dò lên sao
-            Hỏa nhằm đạt được những mục tiêu cuối cùng.</p></li>
-        <li><br/><a href="#" class="readmore_but8">Xem thêm <i class="fa fa-long-arrow-right"></i></a></li>
+          <p><%= @mission.first.description %></p></li>
+        <li><br/><%= link_to "Xem thêm ", home_mission_path, :class => "readmore_but8" %></li>
       </ul>
 
     </div>
